@@ -41,8 +41,13 @@ group :development do
   gem 'listen', '~> 3.0.5'
 end
 
-gem 'devise'
-gem 'omniauth'
-
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# my additions
+gem 'bootstrap-sass'
+gem 'autoprefixer-rails'
+
+gem 'dotenv-rails'
+
+gem 'devise'

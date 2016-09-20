@@ -10,10 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160920160803) do
+ActiveRecord::Schema.define(version: 20160920225232) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "lists", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "studyings", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "list_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["list_id"], name: "index_studyings_on_list_id", using: :btree
+    t.index ["user_id"], name: "index_studyings_on_user_id", using: :btree
+  end
+
+  create_table "terms", force: :cascade do |t|
+    t.string   "english"
+    t.string   "chinese_traditional"
+    t.string   "chinese_simplified"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "pinyin"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -28,8 +51,11 @@ ActiveRecord::Schema.define(version: 20160920160803) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "name"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "studyings", "lists"
+  add_foreign_key "studyings", "users"
 end
