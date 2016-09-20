@@ -1,0 +1,32 @@
+<%= form_for(term) do |f| %>
+  <% if term.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(term.errors.count, "error") %> prohibited this term from being saved:</h2>
+
+      <ul>
+      <% term.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :english %>
+    <%= f.text_field :english %>
+  </div>
+
+  <div class="field">
+    <%= f.label :chinese_traditional %>
+    <%= f.text_field :chinese_traditional %>
+  </div>
+
+  <div class="field">
+    <%= f.label :chinese_simplified %>
+    <%= f.text_field :chinese_simplified %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

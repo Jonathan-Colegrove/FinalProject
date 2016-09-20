@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>English:</strong>
+  <%= @term.english %>
+</p>
+
+<p>
+  <strong>Chinese traditional:</strong>
+  <%= @term.chinese_traditional %>
+</p>
+
+<p>
+  <strong>Chinese simplified:</strong>
+  <%= @term.chinese_simplified %>
+</p>
+
+<%= link_to 'Edit', edit_term_path(@term) %> |
+<%= link_to 'Back', terms_path %>
