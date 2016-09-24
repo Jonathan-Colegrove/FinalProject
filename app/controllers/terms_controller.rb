@@ -69,6 +69,6 @@ class TermsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def term_params
-      params.require(:term).permit(:english, :chinese_traditional, :chinese_simplified)
+      params.require(:term).permit(:english, :chinese_traditional, :chinese_simplified, list_ids: [])
     end
 end

@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   root 'home#index'
 
   get '/resources' => 'home#resources'
+  get '/stroke_order' => 'home#stroke_order'
+
+  get '/terms' => 'terms#index'
 
   resources :terms
   devise_for :users

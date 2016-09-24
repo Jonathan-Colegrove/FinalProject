@@ -15,90 +15,68 @@
 @import "_variables";
 @import "home";
 @import "bootstrap";
-
-@keyframes slideInUp {
-  from {
-    transform: translate3d(0, 100%, 0);
-    visibility: visible;
-  }
-
-  to {
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-.slideInUp {
-  animation-name: slideInUp;
-}
-
-@keyframes slideInLeft {
-  from {
-    transform: translate3d(-100%, 0, 0);
-    visibility: visible;
-  }
-
-  to {
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-.slideInLeft {
-  animation-name: slideInLeft;
-}
-
-@keyframes slideInRight {
-  from {
-    transform: translate3d(100%, 0, 0);
-    visibility: visible;
-  }
-
-  to {
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-.slideInRight {
-  animation-name: slideInRight;
-}
+@import "animations";
 
 .collector {
   display: flex;
   justify-content: space-between;
 }
 
+.test {
+  width: 60vw;
+}
+
+.edit {
+  width: 200px;
+  height: 50px;
+  margin-top: auto;
+  margin-bottom: auto;
+  background-color: #98fb98;
+}
 
 footer {
-  // position: absolute;
+  position: fixed;
   bottom: 0;
   height: 200px;
   width: 100vw;
   background-image: image-url("grass.svg");
   animation: 3s slideInUp;
+  z-index: 1030;
+}
+
+.left, .right {
+  height: 120vh;
+  background-size: cover;
+  position: fixed;
+  z-index: 1029;
+  width: 20vw;
+  top: 0;
+  pointer-events: none;
 }
 
 .left {
-  height: 100vh;
-  width: 20vw;
+  background-position: center right;
+  left: 0;
   margin-left: -40px;
   background-image: image-url("bamboo-left.png");
-  background-size: cover;
-  animation: 3s slideInUp;
   animation: 3s slideInLeft;
 }
 
 .right {
-  height: 100vh;
-  width: 20vw;
+  background-position: center left;
+  right: 0;
   margin-right: -40px;
   background-image: image-url("bamboo-right.png");
-  background-size: cover;
-  animation: 3s slideInUp;
   animation: 3s slideInRight;
+}
+
+.middle {
+  margin: 0 20vw;
 }
 
 .carousel-inner > .item img {
     height: 500px;
-    width: 40vw;
+    width: 70vw;
     background-size: cover;
     display: block;
     margin: auto;
@@ -108,4 +86,8 @@ footer {
     background-image: none;
     @include reset-filter();
   }
+}
+
+.resources_roll {
+  animation: 1.4s rollIn;
 }

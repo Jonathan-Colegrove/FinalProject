@@ -12,6 +12,14 @@
   <% end %>
 
   <div class="field">
+    <%= f.collection_check_boxes :list_ids, List.all, :id, :name do |x| %>
+      <div class="collection-check-box">
+        <%= x.check_box %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="field">
     <%= f.label :english %>
     <%= f.text_field :english %>
   </div>

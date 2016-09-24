@@ -4,7 +4,7 @@
 
 json = JSON.parse(File.read(Rails.root.join("db/seeds/words.json")))
 json.each do |traditional, simplified, pinyin, definition|
-  Term.find_or_create_by(english: definition).
+  Term.find_or_create_by(english: definition.gsub(",", ", ")).
        update_attributes(chinese_simplified: simplified,
                          chinese_traditional: traditional,
                          pinyin: pinyin)
