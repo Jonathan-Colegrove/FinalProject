@@ -1,6 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Terms</h1>
+<div class="collector">
+  <h1>Terms</h1>
+  <%= paginate @terms %>
+  <p><%= page_entries_info @terms %></p>
+</div>
 
 <div class="table-responsive">
   <table class="table table-bordered table-condensed table-hover text-center">
@@ -8,8 +12,8 @@
       <tr>
         <th class="text-center">Add to List</th>
         <th class="text-center">English</th>
-        <th class="text-center">Chinese traditional</th>
-        <th class="text-center">Chinese simplified</th>
+        <th class="text-center">Chinese Traditional</th>
+        <th class="text-center">Chinese Simplified</th>
         <th colspan="3"></th>
       </tr>
     </thead>

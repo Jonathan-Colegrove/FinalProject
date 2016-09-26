@@ -51,3 +51,5 @@ gem 'autoprefixer-rails'
 gem 'dotenv-rails'
 
 gem 'devise'
+
+gem 'kaminari'

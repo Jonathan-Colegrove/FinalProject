@@ -4,7 +4,7 @@ class TermsController < ApplicationController
   # GET /terms
   # GET /terms.json
   def index
-    @terms = Term.all
+    @terms = Term.all.page(params[:page]).per(100)
   end
 
   # GET /terms/1

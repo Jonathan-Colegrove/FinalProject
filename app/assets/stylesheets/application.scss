@@ -16,6 +16,11 @@
 @import "home";
 @import "bootstrap";
 @import "animations";
+@import "_bootswatch";
+
+body {
+  padding-bottom: 90px;
+}
 
 .collector {
   display: flex;
@@ -90,4 +95,8 @@ footer {
 
 .resources_roll {
   animation: 1.4s rollIn;
+}
+
+.chinese {
+  white-space: nowrap;
 }
