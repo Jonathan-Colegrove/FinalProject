@@ -6,11 +6,12 @@
   <p><%= page_entries_info @terms %></p>
 </div>
 
+<button class="btn" type="submit" method="post">Add to List</button>
+
 <div class="table-responsive">
   <table class="table table-bordered table-condensed table-hover text-center">
     <thead>
       <tr>
-        <th class="text-center add_to_list">Add to List</th>
         <th class="text-center">English</th>
         <th class="text-center">Chinese Traditional</th>
         <th class="text-center">Chinese Simplified</th>
@@ -21,7 +22,7 @@
     <tbody>
       <% @terms.each do |term| %>
         <tr>
-          <td><input type="checkbox"><td>
+          <td><input type="checkbox" name="term_ids[]" value="term.id"><td>
           <td><%= term.english %></td>
           <td><%= term.chinese_traditional %></td>
           <td><%= term.chinese_simplified %></td>
