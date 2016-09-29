@@ -21,7 +21,7 @@
 
       <tbody>
         <% @terms.each do |term| %>
-            <td><%= term.check_box %></td>
+            <td><input type="checkbox" name="term_ids[]" value="term.id"></td>
             <td><%= term.english %></td>
             <td><%= term.chinese_traditional %></td>
             <td><%= term.chinese_simplified %></td>
