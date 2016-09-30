@@ -53,3 +53,6 @@ gem 'dotenv-rails'
 gem 'devise'
 
 gem 'kaminari'
+
+gem 'omniauth'
+gem 'omniauth-facebook'
