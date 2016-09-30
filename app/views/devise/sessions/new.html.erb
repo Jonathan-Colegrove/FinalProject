@@ -24,3 +24,7 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+<%= link_to new_user_session_path(provider: 'facebook'), class: "btn btn-social btn-facebook btn-default" do %>
+   <span class="fa fa-facebook"></span>Login with Facebook
+<% end %>

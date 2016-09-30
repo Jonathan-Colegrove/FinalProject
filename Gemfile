@@ -56,3 +56,6 @@ gem 'kaminari'
 
 gem 'omniauth'
 gem 'omniauth-facebook'
+
+gem 'font-awesome-rails'
+gem 'bootstrap-social-rails'
