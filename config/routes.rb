@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/stroke_order' => 'home#stroke_order'
 
   get '/terms' => 'terms#index'
+  get '/matching_game' => 'games#matching_game'
 
   resources :terms
   resources :lists
