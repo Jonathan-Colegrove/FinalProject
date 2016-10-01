@@ -1,4 +1,4 @@
-var matching_array = ['A','A','B','B','C','C','D','D','E','E','F','F','G','G','H','H','I','I','J','J','K','K','L','L'];
+var matching_array = [$('#invisible').data('rubyvar'), $('#invisible').data('rubyvar')];
 var matching_values = [];
 var matching_card_ids = [];
 var cards_flipped = 0;
