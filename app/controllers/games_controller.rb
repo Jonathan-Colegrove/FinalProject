@@ -1,6 +1,6 @@
 class GamesController < ApplicationController
   def matching_game
-    @terms = Term.all
-    @cards = @terms.sample(15)
+    deck = Term.all.sample(15)
+    @cards = deck.map(&:chinese_traditional)
   end
 end
