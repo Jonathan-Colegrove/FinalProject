@@ -27,7 +27,6 @@ body {
 
 .collector {
   display: flex;
-  justify-content: space-between;
 }
 
 .test {
@@ -49,6 +48,7 @@ footer {
   width: 100vw;
   background-image: image-url("grass.svg");
   animation: 3s slideInUp;
+  pointer-events: none;
   z-index: 1030;
 }
 

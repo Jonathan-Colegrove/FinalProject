@@ -1,66 +1,90 @@
-var matching_array = [$('#invisible').data('rubyvar'), $('#invisible').data('rubyvar')];
-var matching_values = [];
-var matching_card_ids = [];
-var cards_flipped = 0;
-
-Array.prototype.matching_card_shuffle = function(){
+$(document).ready(function() {
+  Array.prototype.shuffle = function() {
     var i = this.length, j, temp;
     while(--i > 0){
-        j = Math.floor(Math.random() * (i+1));
-        temp = this[j];
-        this[j] = this[i];
-        this[i] = temp;
+      j = Math.floor(Math.random() * (i+1));
+      temp = this[j];
+      this[j] = this[i];
+      this[i] = temp;
     }
-}
-function newBoard(){
-	cards_flipped = 0;
-	var output = '';
-    matching_array.matching_card_shuffle();
-	for(var i = 0; i < matching_array.length; i++){
-		output += '<div id="card_'+i+'" onclick="matchingFlipcard(this,\''+matching_array[i]+'\')"></div>';
-	}
-	document.getElementById('board').innerHTML = output;
-}
-function matchingFlipcard(card,val){
-	if(card.innerHTML == "" && matching_values.length < 2){
-		card.style.background = 'lightblue';
-		card.innerHTML = val;
-		if(matching_values.length == 0){
-			matching_values.push(val);
-			matching_card_ids.push(card.id);
-		} else if(matching_values.length == 1){
-			matching_values.push(val);
-			matching_card_ids.push(card.id);
-			if(matching_values[0] == matching_values[1]){
-				cards_flipped += 2;
-				// Clear both arrays
-				matching_values = [];
-            	matching_card_ids = [];
-				// Is the board cleared?
-				if(cards_flipped == matching_array.length){
-					alert("Great job!");
-					document.getElementById('board').innerHTML = "";
-					newBoard();
-				}
-			} else {
-				function flipBack(){
-				    // Flip the cards back over
-				    var card_1 = document.getElementById(matching_card_ids[0]);
-				    var card_2 = document.getElementById(matching_card_ids[1]);
-				    card_1.style.background = "url('1.jpg') no-repeat";
-            	    card_1.innerHTML = "";
-				    card_2.style.background = "url('1.jpg') no-repeat";
-            	    card_2.innerHTML = "";
-				    // Clear both arrays
-				    matching_values = [];
-            	    matching_card_ids = [];
-				}
-				setTimeout(flipBack, 500);
-			}
-		}
-	}
-}
+  }
 
-window.onload = function() {
-  newBoard();
-};
+  function play() {
+    // Get the possible cards
+    var possible_cards = $('#invisible').data('rubyvar');
+
+    // matching array = each card twice, & then shuffled
+    var matching_array = [].concat(possible_cards).concat(possible_cards);
+    matching_array.shuffle();
+
+    // Initialize counters
+    var flipped_values = [];
+    var flipped_cards  = [];
+    var cards_flipped  = 0;
+
+    // Append the cards to the board
+    matching_array.forEach(function(card_value, index) {
+      $("#board").append('<div class="card" data-card-value="' + card_value + '"></div>');
+    })
+
+    // Handle the clicks
+    $('.card').on('click', function() {
+      var card = $(this)
+
+      // This card is already flipped, so don't process it
+      if (card.hasClass("card-flipped")) {
+        return;
+      }
+
+      // get the card's value
+      var card_value = card.data("card-value")
+
+      // Flip it over & set the card's HTML to it's 'value' attribute
+      card.addClass("card-flipped");
+      card.html(card_value)
+
+      // Save away the card and it's value
+      flipped_values.push(card_value);
+      flipped_cards.push(card);
+
+      // We don't have two cards flipped yet, so we are done with
+      // this click
+      if (flipped_cards.length < 2) {
+        return;
+      }
+
+      // If the two cards are the same
+      if (flipped_values[0] == flipped_values[1]) {
+        // Increment our counters
+        cards_flipped += 2;
+
+        // Clear the flipped arrays indicating
+        // we are starting a new guess
+        flipped_values = [];
+        flipped_cards = [];
+
+        // Is the board cleared?
+        if (cards_flipped == matching_array.length) {
+          alert("Great job!");
+          $("#board").html("")
+        }
+      } else {
+        // This wasn't a match
+        setTimeout(function() {
+          // Iterate the cards and reset them
+          flipped_cards.forEach(function(card) {
+            $(card).removeClass("card-flipped")
+            $(card).html("")
+          })
+
+          // Clear the flipped arrays indicating
+          // we are starting a new guess
+          flipped_values = [];
+          flipped_cards = [];
+        }, 500);
+      }
+    })
+  }
+
+  play()
+})
