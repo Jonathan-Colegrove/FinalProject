@@ -10,7 +10,12 @@ Rails.application.routes.draw do
   get '/matching_game' => 'games#matching_game'
 
   resources :terms
-  resources :lists
+  resources :lists do
+    member do
+      get :play
+    end
+  end
+
   devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

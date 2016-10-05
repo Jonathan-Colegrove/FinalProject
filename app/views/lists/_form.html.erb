@@ -11,6 +11,24 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <ul class="list-group">
+    <li class="list-group-item active">Selected</li>
+    <% list.terms.each do |term| %>
+      <li class="list-group-item"><%= check_box_tag "list[term_ids][]", term.id, @list.term_ids.include?(term.id) %> <%= term.chinese_traditional %> <%= term.english %></li>
+    <% end %>
+
+    <li class="list-group-item active">Available</li>
+    <% Term.all.each do |term| %>
+      <% unless @list.term_ids.include?(term.id) %>
+        <li class="list-group-item"><%= check_box_tag "list[term_ids][]", term.id, false %> <%= term.chinese_traditional %> <%= term.english %></li>
+      <% end %>
+    <% end %>
+  </ul>
   <div class="actions">
     <%= f.submit %>
   </div>

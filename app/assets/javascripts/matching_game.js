@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).on("turbolinks:load", function() {
   Array.prototype.shuffle = function() {
     var i = this.length, j, temp;
     while(--i > 0){
@@ -23,8 +23,8 @@ $(document).ready(function() {
     var cards_flipped  = 0;
 
     // Append the cards to the board
-    matching_array.forEach(function(card_value, index) {
-      $("#board").append('<div class="card" data-card-value="' + card_value + '"></div>');
+    matching_array.forEach(function(card, index) {
+      $("#board").append('<div class="card" data-card-english="' + card.english + '" + data-card-chinese="' + card.chinese_traditional + '"></div>');
     })
 
     // Handle the clicks
@@ -37,11 +37,12 @@ $(document).ready(function() {
       }
 
       // get the card's value
-      var card_value = card.data("card-value")
+      var card_value = card.data("card-chinese")
 
       // Flip it over & set the card's HTML to it's 'value' attribute
       card.addClass("card-flipped");
-      card.html(card_value)
+      card.html(card.data("card-chinese"))
+      $("#english").html(card.data("card-english"))
 
       // Save away the card and it's value
       flipped_values.push(card_value);
@@ -75,6 +76,7 @@ $(document).ready(function() {
           flipped_cards.forEach(function(card) {
             $(card).removeClass("card-flipped")
             $(card).html("")
+            $("#english").html("")
           })
 
           // Clear the flipped arrays indicating

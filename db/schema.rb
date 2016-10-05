@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160930190015) do
+ActiveRecord::Schema.define(version: 20161005195545) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(version: 20160930190015) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "name"
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_lists_on_user_id", using: :btree
   end
 
   create_table "readings", force: :cascade do |t|
@@ -37,12 +39,12 @@ ActiveRecord::Schema.define(version: 20160930190015) do
   end
 
   create_table "studyings", force: :cascade do |t|
-    t.integer  "user_id"
+    t.integer  "term_id"
     t.integer  "list_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["list_id"], name: "index_studyings_on_list_id", using: :btree
-    t.index ["user_id"], name: "index_studyings_on_user_id", using: :btree
+    t.index ["term_id"], name: "index_studyings_on_term_id", using: :btree
   end
 
   create_table "terms", force: :cascade do |t|
@@ -73,6 +75,6 @@ ActiveRecord::Schema.define(version: 20160930190015) do
   end
 
   add_foreign_key "identities", "users"
+  add_foreign_key "lists", "users"
   add_foreign_key "studyings", "lists"
-  add_foreign_key "studyings", "users"
 end
