@@ -24,7 +24,7 @@
 
 body {
   padding-bottom: 90px;
-  background: lighten(#6dd3e7, 7%);
+  background: lighten(#6dd3e7, 25%);
 }
 
 .collector {
@@ -43,10 +43,10 @@ body {
 }
 
 .your_lists {
-  color: lime;
+  color: $brand-primary;
   font-size: 36px;
 	font-weight: bold;
-  text-shadow: 2px 2px darken(lime, 20%);
+  // text-shadow: 2px 2px darken(lime, 20%);
 }
 
 .test {
@@ -127,4 +127,16 @@ footer {
 
 .chinese {
   white-space: nowrap;
+}
+
+.list-terms {
+  max-height: 40vh;
+  overflow: scroll;
+}
+
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+  .list-terms {
+    max-height: 75vh;
+    overflow: scroll;
+  }
 }

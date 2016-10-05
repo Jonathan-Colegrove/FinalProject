@@ -25,15 +25,15 @@
                 <span class="sr-only">Toggle navigation</span>
                 <%= image_tag("seagull.png", size: "28x28") %>
               </button>
-              <%= link_to image_tag("bear.svg", size: "70x50"), root_path, class: "navbar-brand" %>
+              <%= link_to image_tag("bear.svg", size: "70x50"), root_path %>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
-                <li><%=link_to "Most Common", terms_path %></li>
+                <li><%=link_to "Terms", terms_path %></li>
                 <li><%=link_to "Lists", lists_path %></li>
-                <li><%=link_to "Reading", reading_path %></li>
+                <!-- <li><%=link_to "Reading", reading_path %></li> -->
                 <li><%=link_to "Stroke Order", stroke_order_path %></li>
                 <li><%=link_to "Resources", resources_path %></li>
               </ul>
@@ -62,7 +62,7 @@
                   <span class="sr-only">Toggle navigation</span>
                   <%= image_tag("seagull.png", size: "28x28") %>
                 </button>
-                <%= link_to image_tag("bear.svg", size: "70x50"), root_path, class: "navbar-brand" %>
+                <%= link_to image_tag("bear.svg", size: "70x50"), root_path %>
               </div>
 
               <!-- Collect the nav links, forms, and other content for toggling -->
