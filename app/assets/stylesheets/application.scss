@@ -24,10 +24,29 @@
 
 body {
   padding-bottom: 90px;
+  background: lighten(#6dd3e7, 7%);
 }
 
 .collector {
   display: flex;
+}
+
+.collector_spacing {
+  display: flex;
+  justify-content: space-between;
+}
+
+.centering {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.your_lists {
+  color: lime;
+  font-size: 36px;
+	font-weight: bold;
+  text-shadow: 2px 2px darken(lime, 20%);
 }
 
 .test {
@@ -40,6 +59,11 @@ body {
   margin-top: auto;
   margin-bottom: auto;
   background-color: #98fb98;
+}
+
+.bold {
+  font-weight: bold;
+  color: darken(lime, 20%);
 }
 
 footer {
