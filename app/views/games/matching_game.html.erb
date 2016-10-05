@@ -1,4 +1,5 @@
-<div id="list_name"><%= @list ? @list.name : "" %>
-<div id="english"></div>
+<div id="list_name", class="info"><%= @list ? @list.name : "" %>
+  <span id="english"></span>
+</div>
 <div id="invisible" data-rubyvar="<%= @cards.to_json %>"></div>
 <div id="board"></div>

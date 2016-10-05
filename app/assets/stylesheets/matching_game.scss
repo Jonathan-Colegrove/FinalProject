@@ -25,3 +25,15 @@
 #board > div.card-flipped {
   background: lightblue;
 }
+
+.info {
+	color: $brand-primary;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+#english {
+	padding-left: 10px;
+	color: lime;
+	font-size: 16px;
+}
