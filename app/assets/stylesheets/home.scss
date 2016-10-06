@@ -9,8 +9,6 @@ body {
 #bs-example-navbar-collapse-1 ul li .dropdown-toggle {
   color: lime;
   text-shadow: 1px 1px darken(lime, 10%);
-  letter-spacing: 0.0625em;
-  // text-shadow: 1px 1px #2fe772;
 }
 
 .left {
@@ -126,6 +124,7 @@ h2 {
 #bs-example-navbar-collapse-1 ul li, .thumbnail p {
   font-family: ChinaOne;
   font-size: 22px;
+  letter-spacing: 0.0625em;
 }
 
 @font-face {
