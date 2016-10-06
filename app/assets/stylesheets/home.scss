@@ -108,6 +108,22 @@ footer {
   border-top-left-radius: 12px;
 }
 
+#bs-example-navbar-collapse-1 ul li {
+  font-family: ChinaOne;
+  font-size: 22px;
+}
+
+@font-face {
+  font-family: 'ChinaOne';
+  src:url('ChinaOne.eot');
+  src:url('ChinaOne.eot?#iefix') format('embedded-opentype'),
+    url('ChinaOne.svg#ChinaOne') format('svg'),
+    url('ChinaOne.woff') format('woff'),
+    url('ChinaOne.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .img_2 {
   background-image: image-url("2.jpg");
 	width: 29vw;
