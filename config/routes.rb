@@ -3,8 +3,10 @@ Rails.application.routes.draw do
   root 'home#index'
 
   get '/reading' => 'readings#reading'
-  get '/resources' => 'home#resources'
+  get '/phrases' => 'home#phrases'
+  get '/grammar' => 'home#grammar'
   get '/stroke_order' => 'home#stroke_order'
+  get '/resources' => 'home#resources'
 
   get '/terms' => 'terms#index'
   get '/matching_game' => 'games#matching_game'

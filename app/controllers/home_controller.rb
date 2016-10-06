@@ -18,6 +18,12 @@ class HomeController < ApplicationController
     end
   end
 
+  def grammar
+  end
+
+  def phrases
+  end
+
   def resources
   end
 end

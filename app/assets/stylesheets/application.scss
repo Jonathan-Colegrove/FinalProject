@@ -22,6 +22,24 @@
 @import "font-awesome";
 @import "bootstrap-social";
 
+.thumb span img {
+	border:1px solid #000;
+	height: 200px;
+	width: 200px;
+}
+.thumb span {
+	visibility:hidden;
+}
+.thumb:hover, .thumb:hover span {
+	visibility:visible;
+	z-index:1;
+}
+
+
+
+
+
+
 body {
   padding-bottom: 90px;
   background: lighten(#6dd3e7, 25%);
@@ -46,7 +64,6 @@ body {
   color: $brand-primary;
   font-size: 36px;
 	font-weight: bold;
-  // text-shadow: 2px 2px darken(lime, 20%);
 }
 
 .test {
@@ -87,6 +104,23 @@ footer {
   pointer-events: none;
 }
 
+.thumbnail > img {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.img_1 {
+  background-image: image-url("1.jpg");
+}
+
+.img_2 {
+  background-image: image-url("2.jpg");
+}
+
+.img_3 {
+  background-image: image-url("3.jpg");
+}
+
 .left {
   background-position: center right;
   left: 0;
@@ -105,20 +139,6 @@ footer {
 
 .middle {
   margin: 0 20vw;
-}
-
-.carousel-inner > .item img {
-    height: 500px;
-    width: 70vw;
-    background-size: cover;
-    display: block;
-    margin: auto;
-}
-.carousel-control {
-  &.left, &.right {
-    background-image: none;
-    @include reset-filter();
-  }
 }
 
 .resources_roll {
