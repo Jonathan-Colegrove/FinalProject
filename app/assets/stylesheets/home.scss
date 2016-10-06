@@ -6,6 +6,13 @@ body {
   background: lighten(#6dd3e7, 22%);
 }
 
+#bs-example-navbar-collapse-1 ul li .dropdown-toggle {
+  color: lime;
+  text-shadow: 1px 1px darken(lime, 10%);
+  letter-spacing: 0.0625em;
+  // text-shadow: 1px 1px #2fe772;
+}
+
 .left {
   background-position: center right;
   left: 0;
