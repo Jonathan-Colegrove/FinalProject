@@ -1,3 +1,14 @@
 // Place all the styles related to the lists controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.list-terms {
+  max-height: 40vh;
+  overflow: scroll;
+}
+
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+  .list-terms {
+    max-height: 75vh;
+    overflow: scroll;
+  }
+}

@@ -1,0 +1,12 @@
+.thumb span img {
+	border:1px solid #000;
+	height: 200px;
+	width: 200px;
+}
+.thumb span {
+	visibility:hidden;
+}
+.thumb:hover, .thumb:hover span {
+	visibility:visible;
+	z-index:1;
+}

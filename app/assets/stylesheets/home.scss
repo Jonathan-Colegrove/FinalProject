@@ -1,3 +1,131 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  padding-bottom: 90px;
+  background: lighten(#6dd3e7, 22%);
+}
+
+.left {
+  background-position: center right;
+  left: 0;
+  margin-left: -40px;
+  background-image: image-url("bamboo-left.png");
+  animation: 3s slideInLeft;
+}
+
+.right {
+  background-position: center left;
+  right: 0;
+  margin-right: -40px;
+  background-image: image-url("bamboo-right.png");
+  animation: 3s slideInRight;
+}
+
+.middle {
+  margin: 0 20vw;
+}
+
+.collector {
+  display: flex;
+}
+
+.collector_spacing {
+  display: flex;
+  justify-content: space-between;
+}
+
+.centering {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.your_lists {
+  color: $brand-primary;
+  font-size: 36px;
+	font-weight: bold;
+}
+
+.test {
+  width: 60vw;
+}
+
+.edit {
+  width: 200px;
+  height: 50px;
+  margin-top: auto;
+  margin-bottom: auto;
+  background-color: #98fb98;
+}
+
+.bold {
+  font-weight: bold;
+  color: darken(lime, 20%);
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  height: 200px;
+  width: 100vw;
+  background-image: image-url("grass.svg");
+  animation: 3s slideInUp;
+  pointer-events: none;
+  z-index: 1030;
+}
+
+.left, .right {
+  height: 120vh;
+  background-size: cover;
+  position: fixed;
+  z-index: 1029;
+  width: 20vw;
+  top: 0;
+  pointer-events: none;
+}
+
+.thumbnail > img {
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.thumbnail > p {
+	color: white;
+	font-size: 24px;
+	padding-left: 8px;
+}
+
+.nav li {
+	font-size: 18px;
+}
+
+.img_1 {
+  background-image: image-url("1.jpg");
+	width: 60vw;
+	height: 35vh;
+  border-top-right-radius: 12px;
+  border-top-left-radius: 12px;
+}
+
+.img_2 {
+  background-image: image-url("2.jpg");
+	width: 29vw;
+	height: 25vh;
+  border-bottom-left-radius: 12px;
+}
+
+.img_3 {
+  background-image: image-url("3.jpg");
+	width: 29vw;
+	height: 25vh;
+  border-bottom-right-radius: 12px;
+}
+
+.resources_roll {
+  animation: 1.4s rollIn;
+}
+
+.bounce_in_left {
+  animation: 1.4s bounceInLeft;
+}
