@@ -129,11 +129,11 @@ h2 {
 
 @font-face {
   font-family: 'ChinaOne';
-  src:url('ChinaOne.eot');
-  src:url('ChinaOne.eot?#iefix') format('embedded-opentype'),
-    url('ChinaOne.svg#ChinaOne') format('svg'),
-    url('ChinaOne.woff') format('woff'),
-    url('ChinaOne.ttf') format('truetype');
+  src:font-url('ChinaOne.eot');
+  src:font-url('ChinaOne.eot?#iefix') format('embedded-opentype'),
+    font-url('ChinaOne.svg#ChinaOne') format('svg'),
+    font-url('ChinaOne.woff') format('woff'),
+    font-url('ChinaOne.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
