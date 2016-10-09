@@ -1,9 +1,17 @@
 class ListsController < ApplicationController
   before_action :set_list, only: [:show, :edit, :update, :destroy, :play]
+  before_action :nil_user
 
+  def nil_user
+    redirect_to(new_user_session_path) unless current_user
+  end
   # GET /lists
   # GET /lists.json
   def index
+    if current_user.nil?
+      redirect_to login_path
+      return
+    end
     @lists = current_user.lists.page(params[:page]).per(20)
   end
 
