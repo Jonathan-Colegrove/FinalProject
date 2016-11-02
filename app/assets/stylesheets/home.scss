@@ -29,6 +29,7 @@ body {
 
 .middle {
   margin: 0 20vw;
+  padding-top: 90px;
 }
 
 .collector {
@@ -98,8 +99,8 @@ h2 {
   text-decoration: none;
 }
 
-.thumbnail > img {
-  background-size: 100% 100%;
+.thumbnail {
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
